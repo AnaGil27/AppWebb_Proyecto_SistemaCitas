@@ -36,3 +36,4 @@ public class MasajeController {
     ){
         return masajeService.guaradarMasaje(masajeRequest);
     }
+}
