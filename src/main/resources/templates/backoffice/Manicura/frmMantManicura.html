@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script th:src="@{/scripts/web/backoffice/manicura/frmMantManicura.js}"
+        type="text/javascript"></script>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card ">
+    <div class="card-header text-bg-dark mb-3">
+        Mantenimiento de Manicure
+    </div>
+    <div class="card-body">
+        <button id="btnagregar"
+                type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+        <hr />
+        <div id="mensaje"></div>
+        <table id="tblmanicura" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Tiempo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="man :${listarManicura}">
+                <td th:text="${man.id_manicura}"></td>
+                <td th:text="${man.tiempo_manicura}"></td>
+                <td th:text="${man.precio_manicura}"></td>
+                <td th:text="${man.descmanicura.desc_manicura}"></td>
+                <td>
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-mancod="${man.id_manicura}"
+                            th:data-manname="${man.tiempo_manicura}"
+                            th:data-manprice="${man.precio_manicura}"
+                            th:data-manDescMan="${man.descmanicura.id_desc_manicura}">
+                        <i class="fas fa-edit"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal Registrar / Actualizar Manicure -->
+<div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Manicure</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="txttiempo" class="form-label">Tiempo</label>
+                    <input type="text" class="form-control" id="txttiempo">
+                </div>
+                <div class="mb-3">
+                    <label for="txtprecio" class="form-label">Precio </label>
+                    <input type="text" class="form-control" id="txtprecio">
+                </div>
+                <div class="mb-3">
+                    <label for="cbodesc" class="form-label">Descripcion de Manicure</label>
+                    <select id="cbodesc" class="form-control"></select>
+                </div>
+                <input type="hidden" id="hddcodman" value="0">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="button" id="btnguardar" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
