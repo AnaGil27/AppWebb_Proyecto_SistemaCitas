@@ -1,4 +1,9 @@
 package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.repository;
 
-public interface DescMaquillajeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.DescMaquillaje;
+
+@Repository
+public interface DescMaquillajeRepository extends JpaRepository<DescMaquillaje, Integer> {
 }
