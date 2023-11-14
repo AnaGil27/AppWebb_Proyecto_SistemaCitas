@@ -34,40 +34,46 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" class="form-control" name="nombres" id="nombres">
+                                            <input type="text" class="form-control" name="nombres" id="nombres" required pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Ingrese solo letras y espacios">
                                             <label class="form-label" for="nombres">Nombres</label>
+                                            <div class="invalid-feedback">Ingrese solo letras y espacios</div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" class="form-control" name="apellidos" id="apellidos">
-                                            <label for="apellidos" class="form-label">Apellidos</label>
+                                            <input type="text" class="form-control" name="apellidos" id="apellidos" required pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Ingrese solo letras y espacios">
+                                            <label class="form-label" for="apellidos">Apellidos</label>
+                                            <div class="invalid-feedback">Ingrese solo letras y espacios</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Usuario -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="nomusuario" id="nomusuario">
-                                    <label for="nomusuario" class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" name="nomusuario" id="nomusuario" required pattern="[A-Za-z0-9]+" title="Ingrese solo letras y números">
+                                    <label class="form-label" for="nomusuario">Usuario</label>
+                                    <div class="invalid-feedback">Ingrese solo letras y números</div>
                                 </div>
 
                                 <!-- Celular -->
                                 <div class="form-outline mb-4">
-                                    <input maxlength="9" type="text" class="form-control" name="celularusuario" id="celularusuario">
-                                    <label for="celularusuario" class="form-label">Celular</label>
+                                    <input maxlength="9" type="text" class="form-control" name="celularusuario" id="celularusuario" required pattern="9[0-9]+" title="Ingrese un número de celular válido que empiece con 9">
+                                    <label class="form-label" for="celularusuario">Celular</label>
+                                    <div class="invalid-feedback">Ingrese un número de celular válido que empiece con 9</div>
                                 </div>
 
                                 <!-- Email -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="email" id="email">
-                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                    <label class="form-label" for="email">Email</label>
+                                    <div class="invalid-feedback">Ingrese una dirección de correo electrónico válida</div>
                                 </div>
 
                                 <!-- Password -->
                                 <div class="form-outline mb-4">
-                                    <input maxlength="15" type="password" class="form-control" name="password" id="password">
-                                    <label for="password" class="form-label">Password</label>
+                                    <input maxlength="15" type="password" class="form-control" name="password" id="password" required>
+                                    <label class="form-label" for="password">Password</label>
+                                    <div class="invalid-feedback">Ingrese una contraseña válida</div>
                                 </div>
 
                                 <!-- Botones -->
