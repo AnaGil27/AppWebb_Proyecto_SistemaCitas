@@ -1,12 +1,15 @@
 package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.configuration;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service.DetalleUsuarioService;
@@ -19,11 +22,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain config (HttpSecurity http) throws Exception{
-        http
-                .authorizeHttpRequests(
+        http.authorizeHttpRequests(
                         auth ->
                                 auth.requestMatchers("/auth/login",
                                                 "/auth/registrar",
+                                                "/auth/login-success",
                                                 "/auth/guardarUsuario",
                                                 "/resources/**",
                                                 "/static/**",
@@ -35,10 +38,11 @@ public class SecurityConfig {
                 ).formLogin(
                         login ->
                                 login.loginPage("/auth/login")
-                                        .defaultSuccessUrl("/auth/login-success")
+                                        .defaultSuccessUrl("/auth/login-success", true  )
                                         .usernameParameter("nomusuario")
                                         .passwordParameter("password")
                 ).authenticationProvider(authenticationProvider());
+
         return http.build();
     }
 

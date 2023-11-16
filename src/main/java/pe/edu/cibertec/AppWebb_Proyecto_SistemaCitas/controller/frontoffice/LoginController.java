@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,17 +37,19 @@ public class LoginController {
 
     @PostMapping("/login-success")
     public String loginSucces(HttpServletRequest request){
+        System.out.println("Ingresó al método loginSucces");
         UserDetails usuario = (UserDetails) SecurityContextHolder
                 .getContext()
                 .getAuthentication()
-                .getPrincipal();
+                .getPrincipal(); //Linea 44
         HttpSession session = request.getSession();
         session.setAttribute("usuario", usuario.getUsername());
         return "frontoffice/auth/home";
-    }
 
+    }
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario){
+        System.out.println("Se guardó el usuarioooooo");
         usuarioService.saveUser(usuario);
         emailService.enviarCorreoConfirmacion(usuario);
         return "frontoffice/auth/frmLogin";
