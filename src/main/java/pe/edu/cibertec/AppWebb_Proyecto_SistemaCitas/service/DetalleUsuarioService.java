@@ -1,6 +1,7 @@
 package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -19,6 +20,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Service
 public class DetalleUsuarioService implements UserDetailsService {
+    @Autowired
     private UsuarioService usuarioService;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -37,10 +39,8 @@ public class DetalleUsuarioService implements UserDetailsService {
         return grantedAuthorities;
     }
 
-    private UserDetails autenticacionUsuario(
-            Usuario usuario, List<GrantedAuthority> authorityList){
-        return new User(usuario.getNomusuario(),
-                usuario.getPassword(),
+    private UserDetails autenticacionUsuario(Usuario usuario, List<GrantedAuthority> authorityList){
+        return new User(usuario.getNomusuario(), usuario.getPassword(),
                 usuario.getActivo(),
                 true,
                 true,

@@ -20,6 +20,7 @@ import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service.UsuarioService;
 @Controller
 @RequestMapping("/auth")
 public class LoginController {
+    @Autowired
     private UsuarioService usuarioService;
 
     @Autowired
@@ -35,18 +36,19 @@ public class LoginController {
         return "frontoffice/auth/frmRegistroUsuario";
     }
 
-    @PostMapping("/login-success")
+    @GetMapping("/login-success")
     public String loginSucces(HttpServletRequest request){
         System.out.println("Ingresó al método loginSucces");
         UserDetails usuario = (UserDetails) SecurityContextHolder
                 .getContext()
                 .getAuthentication()
-                .getPrincipal(); //Linea 44
+                .getPrincipal(); //Linea 45
         HttpSession session = request.getSession();
         session.setAttribute("usuario", usuario.getUsername());
         return "frontoffice/auth/home";
 
     }
+
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario){
         System.out.println("Se guardó el usuarioooooo");

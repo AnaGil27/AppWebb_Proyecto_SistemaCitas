@@ -26,7 +26,7 @@
                                          style="width: 350px;" alt="logo">
                                 </div>
 
-                                <form th:action="@{/auth/login-success}" method="post">
+                                <form th:action="@{/auth/login}" method="post">
                                     <p>Por favor ingrese su cuenta</p>
                                     <!-- Usuario -->
                                     <div class="form-outline mb-4">
@@ -35,6 +35,9 @@
                                     <!-- Password -->
                                     <div class="form-outline mb-4">
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                    </div>
+                                    <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                                        Usuario o Password incorrecto.
                                     </div>
 
                                     <!-- Botón Login -->

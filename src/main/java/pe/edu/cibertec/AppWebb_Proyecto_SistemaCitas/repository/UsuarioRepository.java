@@ -6,6 +6,8 @@ import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-    Usuario findByEmail(String email);
+    /*Usuario findByEmail(String email);*/
     Usuario findByNomusuario(String nomusuario);
+    Usuario findByPassword(String password);
+
 }

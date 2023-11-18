@@ -12,12 +12,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service.DetalleUsuarioService;
 
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig {
+    @Autowired
     private final DetalleUsuarioService detalleUsuarioService;
 
     @Bean
@@ -26,7 +28,6 @@ public class SecurityConfig {
                         auth ->
                                 auth.requestMatchers("/auth/login",
                                                 "/auth/registrar",
-                                                "/auth/login-success",
                                                 "/auth/guardarUsuario",
                                                 "/resources/**",
                                                 "/static/**",
@@ -41,6 +42,7 @@ public class SecurityConfig {
                                         .defaultSuccessUrl("/auth/login-success", true  )
                                         .usernameParameter("nomusuario")
                                         .passwordParameter("password")
+                                        .failureUrl("/auth/login?error=true")
                 ).authenticationProvider(authenticationProvider());
 
         return http.build();
