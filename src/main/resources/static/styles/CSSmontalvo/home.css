@@ -1,0 +1,8 @@
+.text-white a {
+    color: white; /* Color del texto blanco */
+    text-decoration: none; /* Eliminar la línea subrayada por defecto en los enlaces */
+}
+
+.text-white a:hover {
+    text-decoration: none; /* Eliminar la línea subrayada al pasar el ratón sobre el enlace */
+}

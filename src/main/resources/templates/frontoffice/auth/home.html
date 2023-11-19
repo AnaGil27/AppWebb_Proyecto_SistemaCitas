@@ -16,7 +16,7 @@
 <body>
 <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
     <div class="text-white bg-dark p-4 d-flex">
-        <div class="p-2 w-100">
+        <div class="p-2 w-100" >
             <h3 class="text-body-emphasis h3">Montalvo Salon y Spa</h3>
             <span class="text-body-secondary">La belleza al alcance de ti.</span>
         </div>
@@ -26,16 +26,51 @@
                 <h4 class="p-2" th:text="${ session.usuario}"></h4>
             </div>
         </div>
-
     </div>
 </div>
+
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="text-white d-flex flex-nowrap text-white bg-dark">
+            <div class="order-1 p-2"><a href="#">Servicios</a></div>
+            <div class="order-2 p-2"><a href="#">Miembros del Personal</a></div>
+            <div class="order-3 p-2"><a href="#">Sobre Nosotros</a></div>
+        </div>
     </div>
 </nav>
+
+<div class="container text-center">
+    <h2>Servicios</h2>
+    <nav class="nav flex-column">
+        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" aria-current="page" href="#">Peinados</a>
+        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" aria-current="page" href="#">Maquillaje</a>
+        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" href="#">Masajes</a>
+        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" href="#">Manicure</a>
+    </nav>
+</div>
+
+<div class="container text-center">
+    <h2>Miembros del Personal</h2>
+    <nav class="nav flex-column">
+        <a class="nav-link active" aria-current="page" href="#">Peinados</a>
+        <a class="nav-link" href="#">Maquillaje</a>
+        <a class="nav-link" href="#">Masajes</a>
+        <a class="nav-link" href="#">Manicure</a>
+    </nav>
+</div>
+
+<div class="container text-center">
+    <h2>Sobre Nosotros</h2>
+    <nav class="nav flex-column">
+        <a class="nav-link active" aria-current="page" href="#">Peinados</a>
+        <a class="nav-link" href="#">Maquillaje</a>
+        <a class="nav-link" href="#">Masajes</a>
+        <a class="nav-link" href="#">Manicure</a>
+    </nav>
+</div>
 
 </body>
 </html>
