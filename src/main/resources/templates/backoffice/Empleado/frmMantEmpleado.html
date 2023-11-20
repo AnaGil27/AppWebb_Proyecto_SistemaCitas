@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script th:src="@{/scripts/web/backoffice/empleado/frmMantEmpleado.js}"
+        type="text/javascript"></script>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card ">
+    <div class="card-header text-bg-dark mb-3">
+        Mantenimiento de Manicure
+    </div>
+    <div class="card-body">
+        <button id="btnagregar"
+                type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+        <hr />
+        <div id="mensaje"></div>
+        <table id="tblEmpleado" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">NomEmpleado</th>
+                <th scope="col">ApeEmpleado</th>
+                <th scope="col">CelularEmpleado</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="man :${listarEmpleado}">
+                <td th:text="${emp.IdEmpleado}"></td>
+                <td th:text="${emp.NomEmpleado}"></td>
+                <td th:text="${emp.ApeEmpleado}"></td>
+                <td th:text="${emp.CelularEmpleado}"></td>
+                <td>
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-cod="${emp.IdEmpleado}"
+                            th:data-nom="${emp.NomEmpleado}"
+                            th:data-ape="${emp.ApeEmpleado}"
+                            th:data-cel="${emp.CelularEmpleado}">
+                        <i class="fas fa-edit"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal Registrar / Actualizar Manicure -->
+<div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Manicure</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre">
+                </div>
+                <div class="mb-3">
+                    <label for="txtApellido" class="form-label">Apellido </label>
+                    <input type="text" class="form-control" id="txtApellido">
+                </div>
+                <div class="mb-3">
+                    <label for="txtCelular" class="form-label">Celular </label>
+                    <input type="text" class="form-control" id="txtCelular">
+                </div>
+
+                <input type="hidden" id="hddcodEmp" value="0">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="button" id="btnguardar" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

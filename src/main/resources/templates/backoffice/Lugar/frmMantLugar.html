@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script th:src="@{/scripts/web/backoffice/lugar/frmMantLugar.js}"
+        type="text/javascript"></script>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card ">
+    <div class="card-header text-bg-dark mb-3">
+        Mantenimiento de Manicure
+    </div>
+    <div class="card-body">
+        <button id="btnagregar"
+                type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+        <hr />
+        <div id="mensaje"></div>
+        <table id="tbllugar" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Distrito</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="man :${listarLugar}">
+                <td th:text="${lug.IdLugar}"></td>
+                <td th:text="${lug.Ciudad}"></td>
+                <td th:text="${lug.Distrito}"></td>
+                <td>
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-cod="${lug.IdLugar}"
+                            th:data-ciu="${lug.Ciudad}"
+                            th:data-distrito="${lug.Distrito}">
+                        <i class="fas fa-edit"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal Registrar / Actualizar Manicure -->
+<div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Manicure</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="txtCiudad" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="txtCiudad">
+                </div>
+                <div class="mb-3">
+                    <label for="txtDistrito" class="form-label">Distrito </label>
+                    <input type="text" class="form-control" id="txtDistrito">
+                </div>
+
+                <input type="hidden" id="hddcodLug" value="0">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="button" id="btnguardar" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
