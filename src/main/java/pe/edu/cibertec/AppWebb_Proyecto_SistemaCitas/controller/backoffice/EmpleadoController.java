@@ -3,7 +3,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Lugar;
+import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Empleado;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.request.EmpleadoRequest;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.response.ResultadoResponse;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service.EmpleadoService;
@@ -24,7 +24,7 @@ public class EmpleadoController {
     }
     @GetMapping("/listar")
     @ResponseBody
-    public List<Lugar> listarEmpleado(){
+    public List<Empleado> listarEmpleado(){
         return empleadoService.listarEmpleado();
     }
 
