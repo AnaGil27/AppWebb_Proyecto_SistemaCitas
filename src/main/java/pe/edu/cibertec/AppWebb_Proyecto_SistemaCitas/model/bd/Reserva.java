@@ -18,7 +18,7 @@ public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdReserva;
+    private Integer id_reserva;
 
     @OneToOne
     @JoinColumn(name="idusuario")
@@ -41,14 +41,14 @@ public class Reserva {
     private Maquillaje maquillaje;
 
     @OneToOne
-    @JoinColumn(name="IdEmpleado")
+    @JoinColumn(name="id_empleado")
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="IdLugar")
+    @JoinColumn(name="id_lugar")
     private Lugar lugar;
 
-    @Column(name="FechaReserva")
+    @Column(name="fecha_reserva")
     private String FechaReserva;
 
 

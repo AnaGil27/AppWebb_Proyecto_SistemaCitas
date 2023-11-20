@@ -21,8 +21,8 @@ public class ReservaService {
         Boolean respuesta = true;
         try {
             Reserva objReserva = new Reserva();
-            if (reserva.getIdReserva() > 0) {
-                objReserva.setIdReserva(reserva.getIdReserva());
+            if (reserva.getId_reserva() > 0) {
+                objReserva.setId_reserva(reserva.getId_reserva());
             }
 
             Usuario usuario = new Usuario();
@@ -46,14 +46,14 @@ public class ReservaService {
             objReserva.setMaquillaje(maquillaje);
 
             Empleado empleado = new Empleado();
-            empleado.setIdEmpleado(reserva.getIdEmpleado());
+            empleado.setId_empleado(reserva.getId_empleado());
             objReserva.setEmpleado(empleado);
 
             Lugar lugar = new Lugar();
-            lugar.setIdLugar(reserva.getIdLugar());
+            lugar.setId_lugar(reserva.getId_lugar());
             objReserva.setLugar(lugar);
 
-            objReserva.setFechaReserva(reserva.getFechaReserva());
+            objReserva.setFechaReserva(reserva.getFecha_reserva());
 
             reservaRepository.save(objReserva);
         }catch (Exception ex){

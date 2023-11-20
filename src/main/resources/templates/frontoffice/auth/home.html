@@ -34,43 +34,235 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="text-white d-flex flex-nowrap text-white bg-dark">
-            <div class="order-1 p-2"><a href="#">Servicios</a></div>
-            <div class="order-2 p-2"><a href="#">Miembros del Personal</a></div>
-            <div class="order-3 p-2"><a href="#">Sobre Nosotros</a></div>
+        <div class="d-flex flex-nowrap bg-dark">
+            <div class="order-1 p-2 text-white"><a href="#Servicios">Servicios</a></div>
+            <div class="order-2 p-2 text-white"><a href="#Personal">Miembros del Personal</a></div>
+            <div class="order-3 p-2 text-white"><a href="#Nosotros">Sobre Nosotros</a></div>
+            <div class="order-4 p-2 text-warning"><a href="#">RESERVE AQUI</a></div>
         </div>
     </div>
 </nav>
-
-<div class="container text-center">
-    <h2>Servicios</h2>
-    <nav class="nav flex-column">
-        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" aria-current="page" href="#">Peinados</a>
-        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" aria-current="page" href="#">Maquillaje</a>
-        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" href="#">Masajes</a>
-        <a class="flex-sm-fill text-sm-center nav-link active btn btn-primary" href="#">Manicure</a>
-    </nav>
+<section>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img th:src="@{/imagenes/mon1.jpg}" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/imagenes/mon2.jpg}" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/imagenes/mon3.jpg}" class="d-block w-100" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/imagenes/mon4.jpg}" class="d-block w-100" alt="Imagen 4">
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/imagenes/mon5.png}" class="d-block w-100" alt="Imagen 5">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</section>
+<!-- SERVICIOS -->
+<div class="container text-center p-4">
+    <h2 id="Servicios">Servicios</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4 p-4">
+        <div class="col">
+            <div class="card">
+                <img th:src="@{/imagenes/peinados.jpg}" class="card-img-top" alt="peinados">
+                <div class="card-body">
+                    <h5 class="card-title">Peinados</h5>
+                    <p class="card-text">Descubre la verdadera expresión de tu personalidad a través de
+                        peinados excepcionales. Nuestros estilistas profesionales ofrecen una amplia
+                        gama de opciones, desde cortes modernos y elegantes hasta peinados elaborados
+                        para esas ocasiones especiales que marcan la diferencia.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img th:src="@{/imagenes/maquillaje.png}" class="card-img-top" alt="maquillaje">
+                <div class="card-body">
+                    <h5 class="card-title">Maquillaje</h5>
+                    <p class="card-text">Resalta tu belleza facial con la magia del maquillaje
+                        profesional. Nuestros artistas del maquillaje utilizan productos de alta
+                        calidad para resaltar tus rasgos naturales, creando looks que se adaptan
+                        perfectamente a cada ocasión. Desde maquillaje diario y natural hasta estilos
+                        audaces y artísticos para eventos especiales. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img th:src="@{/imagenes/masajes.jpg}" class="card-img-top" alt="masajes">
+                <div class="card-body">
+                    <h5 class="card-title">Masajes</h5>
+                    <p class="card-text">Sumérgete en un oasis de relajación y bienestar con
+                        nuestros masajes expertos. Nuestros terapeutas capacitados utilizan
+                        técnicas especializadas para aliviar la tensión muscular, mejorar la
+                        circulación sanguínea y reducir el estrés. Cada sesión de masaje se
+                        adapta a tus necesidades específicas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img th:src="@{/imagenes/mani.jpg}" class="card-img-top" alt="manicure">
+                <div class="card-body">
+                    <h5 class="card-title">Manicure</h5>
+                    <p class="card-text">Experimenta el cuidado y embellecimiento de tus uñas
+                        y manos con nuestros servicios de manicura. Nuestros profesionales ofrecen
+                        desde tratamientos básicos, como cortar y dar forma a las uñas, hasta manicuras
+                        más elaboradas con esmaltes decorativos, uñas de gel o acrílicas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="container text-center">
-    <h2>Miembros del Personal</h2>
-    <nav class="nav flex-column">
-        <a class="nav-link active" aria-current="page" href="#">Peinados</a>
-        <a class="nav-link" href="#">Maquillaje</a>
-        <a class="nav-link" href="#">Masajes</a>
-        <a class="nav-link" href="#">Manicure</a>
-    </nav>
-</div>
+<!-- TRABAJADORES -->
+<div class="container text-center p-4">
+    <h2 id="Personal">Miembros del Personal</h2>
+    <div class="modal-body p-4">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba1.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Gabriela Lopez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men1.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Raul Gutierrez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba2.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Isabel Martinez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men2.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Hector Santos</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba3.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Laura Ramirez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men3.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Andres Perez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba4.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Valeria Gomez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men4.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Javier Rodriguez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba5.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Natalia Hernandez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men5.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Sebastian Diaz</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/piba6.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Camila Fernandez</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img th:src="@{/imagenes/men6.jpg}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Eduardo Vargas</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="container text-center">
-    <h2>Sobre Nosotros</h2>
-    <nav class="nav flex-column">
-        <a class="nav-link active" aria-current="page" href="#">Peinados</a>
-        <a class="nav-link" href="#">Maquillaje</a>
-        <a class="nav-link" href="#">Masajes</a>
-        <a class="nav-link" href="#">Manicure</a>
-    </nav>
-</div>
+    <div class="container text-center p-4">
+        <h2 id="Nosotros">Sobre Nosotros</h2>
+        <div class="card text-bg-dark">
+            <img th:src="@{/imagenes/nosotros.jpg}" class="card-img" alt="nosotros">
+            <div class="card-img-overlay">
+                <div class="text-light bg-dark p-2">
+                    <h5 class="card-title  text-light bg-dark">QUIENES SOMOS?</h5>
+                    <p class="card-text text-light bg-dark">En Montalvo Salon & Spa, no solo somos un lugar de
+                        belleza y bienestar; somos una experiencia dedicada a elevar tu espíritu y renovar
+                        tu energía. Nuestra misión es ofrecerte un refugio donde puedas escapar del estrés
+                        diario y rejuvenecer tu cuerpo, mente y alma.</p>
+                    <p class="card-text text-light bg-dark"><small>No esperes más para consentirte. Reserva tu cita en
+                        Montalvo Salon & Spa y experimenta el lujo y la relajación en su máxima expresión.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -21,20 +21,17 @@
             <thead>
             <tr>
                 <th scope="col">Código</th>
-                <th scope="col">Ciudad</th>
                 <th scope="col">Distrito</th>
                 <th scope="col">Actualizar</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="man :${listarLugar}">
-                <td th:text="${lug.IdLugar}"></td>
-                <td th:text="${lug.Ciudad}"></td>
+                <td th:text="${lug.id_lugar}"></td>
                 <td th:text="${lug.Distrito}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
-                            th:data-cod="${lug.IdLugar}"
-                            th:data-ciu="${lug.Ciudad}"
+                            th:data-cod="${lug.id_lugar}"
                             th:data-distrito="${lug.Distrito}">
                         <i class="fas fa-edit"></i></button>
                 </td>

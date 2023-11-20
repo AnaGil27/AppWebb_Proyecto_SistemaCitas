@@ -6,3 +6,10 @@
 .text-white a:hover {
     text-decoration: none; /* Eliminar la línea subrayada al pasar el ratón sobre el enlace */
 }
+.text-warning a{
+    color: orange;
+    text-decoration: none;
+}
+.text-warning a:hover {
+    text-decoration: none;
+}

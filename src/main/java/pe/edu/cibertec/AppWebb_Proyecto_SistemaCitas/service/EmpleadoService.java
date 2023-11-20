@@ -1,5 +1,7 @@
 package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Empleado;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.request.EmpleadoRequest;
 
@@ -9,6 +11,8 @@ import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.repository.EmpleadoReposito
 
 import java.util.List;
 
+@AllArgsConstructor
+@Service
 public class EmpleadoService {
     private EmpleadoRepository empleadoRepository;
 
@@ -21,7 +25,7 @@ public class EmpleadoService {
         try{
             Empleado objEmpleado = new Empleado();
             if(empleado.getIdEmpleado()>0){
-                objEmpleado.setIdEmpleado(empleado.getIdEmpleado());
+                objEmpleado.setId_empleado(empleado.getIdEmpleado());
             }
             objEmpleado.setNomEmpleado(empleado.getNomEmpleado());
             objEmpleado.setApeEmpleado(empleado.getApeEmpleado());

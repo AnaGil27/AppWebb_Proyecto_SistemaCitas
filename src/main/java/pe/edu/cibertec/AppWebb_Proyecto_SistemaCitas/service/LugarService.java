@@ -21,10 +21,9 @@ public class LugarService {
         Boolean respuesta = true;
         try{
             Lugar objLugar = new Lugar();
-            if(lugar.getIdLugar()>0){
-                objLugar.setIdLugar(lugar.getIdLugar());
+            if(lugar.getId_lugar()>0){
+                objLugar.setId_lugar(lugar.getId_lugar());
             }
-            objLugar.setCiudad(lugar.getCiudad());
             objLugar.setDistrito(lugar.getDistrito());
 
             lugarRepository.save(objLugar);
