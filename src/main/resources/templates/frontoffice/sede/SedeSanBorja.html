@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Montalvo</title>
+    <link th:href="@{/styles/bootstrap/bootstrap.min.css}"
+          rel="stylesheet"/>
+    <link th:href="@{/styles/fontawesome/all.css}"
+          rel="stylesheet"/>
+    <link th:href="@{/styles/CSSmontalvo/home.css}"
+          rel="stylesheet"/>
+    <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}"
+            type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container mt-4" th:action="@{/sede/SedeSanBorja}">
+    <h2>Servicios</h2>
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/peinados.jpg}" class="card-img-top" alt="Servicio 1">
+                <div class="card-body">
+                    <h5 class="card-title">Peinados</h5>
+                    <p class="card-text">Descripción del servicio 1.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/maquillaje.png}" class="card-img-top" alt="Servicio 2">
+                <div class="card-body">
+                    <h5 class="card-title">Maquillaje</h5>
+                    <p class="card-text">Descripción del servicio 2.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/masajes.jpg}" class="card-img-top" alt="Servicio 3">
+                <div class="card-body">
+                    <h5 class="card-title">Masajes</h5>
+                    <p class="card-text">Descripción del servicio 3.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/mani.jpg}" class="card-img-top" alt="Servicio 4">
+                <div class="card-body">
+                    <h5 class="card-title">Manicure</h5>
+                    <p class="card-text">Descripción del servicio 4.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-4">Especialista</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Empleado 1">
+                <div class="card-body">
+                    <h5 class="card-title">Natalia Hernandez</h5>
+                    <p class="card-text">Descripción del empleado 1.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Empleado 2">
+                <div class="card-body">
+                    <h5 class="card-title">Andres Perez</h5>
+                    <p class="card-text">Descripción del empleado 2.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
