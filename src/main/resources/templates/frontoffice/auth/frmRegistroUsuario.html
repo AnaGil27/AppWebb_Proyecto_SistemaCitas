@@ -71,9 +71,9 @@
 
                                 <!-- Password -->
                                 <div class="form-outline mb-4">
-                                    <input maxlength="15" type="password" class="form-control" name="password" id="password" required>
+                                    <input maxlength="15" type="password" class="form-control" name="password" id="password" pattern=".{4,}" title="Ingrese una contraseña válida (más de 3 caracteres)" required>
                                     <label class="form-label" for="password">Password</label>
-                                    <div class="invalid-feedback">Ingrese una contraseña válida</div>
+                                    <div class="invalid-feedback">Ingrese una contraseña válida (más de 3 caracteres)</div>
                                 </div>
 
                                 <!-- Botones -->

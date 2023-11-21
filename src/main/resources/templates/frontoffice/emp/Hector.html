@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Montalvo</title>
+    <link th:href="@{/styles/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/fontawesome/all.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/CSSmontalvo/home.css}" rel="stylesheet"/>
+    <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Servicio de Hector</h2>
+            <div th:action="@{/emp/Hector}" class="card mb-4">
+                <a th:href="@{/especialidad/EspecialidadMasaje}">
+                    <img th:src="@{/imagenes/masajes.jpg}" class="card-img-top" alt="masajes">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Masajes</h5>
+                    <p class="card-text">Sumérgete en un oasis de relajación y bienestar con
+                        nuestros masajes expertos. Nuestros terapeutas capacitados utilizan
+                        técnicas especializadas para aliviar la tensión muscular, mejorar la
+                        circulación sanguínea y reducir el estrés. Cada sesión de masaje se
+                        adapta a tus necesidades específicas.</p>
+                </div>
+            </div>
+
+            <h2>Sede donde encontramos a Hector</h2>
+            <div class="card">
+                <a th:href="@{/sede/SedeSanIsidro}">
+                    <img th:src="@{/imagenes/sanisidro.jpg}" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">San Isidro</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            <h2 class="text-center mt-4">Horario de Hector</h2>
+            <div class="btn-group-vertical text-center" role="group" aria-label="Horarios">
+                <button type="button" class="btn btn-secondary btn-block">Lunes a Viernes: 9:00 AM - 6:00 PM</button>
+                <button type="button" class="btn btn-secondary btn-block">Sábado (Tarde): 4:00 PM - 6:00 PM</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

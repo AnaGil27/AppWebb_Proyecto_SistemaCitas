@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Montalvo</title>
+    <link th:href="@{/styles/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/fontawesome/all.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/CSSmontalvo/home.css}" rel="stylesheet"/>
+    <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Servicio de Andres</h2>
+            <div th:action="@{/emp/AndreP}" class="card mb-4">
+                <a th:href="@{/especialidad/EspecialidadPeinado}">
+                    <img th:src="@{/imagenes/peinados.jpg}" class="card-img-top" alt="peinados">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Peinados</h5>
+                    <p class="card-text">Descubre la verdadera expresión de tu personalidad a través de
+                        peinados excepcionales. Nuestros estilistas profesionales ofrecen una amplia
+                        gama de opciones, desde cortes modernos y elegantes hasta peinados elaborados
+                        para esas ocasiones especiales que marcan la diferencia.</p>
+                </div>
+            </div>
+
+            <h2>Sede donde encontramos a Andres</h2>
+            <div class="card">
+                <a th:href="@{/sede/SedeMiraflores}">
+                    <img th:src="@{/imagenes/miraflores.jpg}" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Miraflores</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            <h2 class="mt-4">Horario de Andres</h2>
+            <div class="btn-group-vertical" role="group" aria-label="Horarios">
+                <button type="button" class="btn btn-secondary btn-block">Lunes a Viernes: 9:00 AM - 6:00 PM</button>
+                <button type="button" class="btn btn-secondary btn-block">Sábado (Tarde): 4:00 PM - 6:00 PM</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

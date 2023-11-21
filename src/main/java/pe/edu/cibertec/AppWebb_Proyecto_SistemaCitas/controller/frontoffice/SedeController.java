@@ -17,7 +17,7 @@ public class SedeController {
         return "frontoffice/sede/SedeSanIsidro";
     }
     @GetMapping("/SedeSantiagodeSurco")
-    public String SedeSantiagodeSurco() {
+    public String sedeSantiagodeSurco() {
         return "frontoffice/sede/SedeSantiagodeSurco";
     }
     @GetMapping("/SedeBellavista")

@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/especialidad")
 public class EspecialidadController {
     @GetMapping("/EspecialidadManicura")
-    public String especialidad() {
+    public String especialidadManicura() {
         return "frontoffice/especialidad/EspecialidadManicura";
     }
     @GetMapping("/EspecialidadPeinado")
-    public String SedeSanIsidro() {
+    public String especialidadPeinado() {
         return "frontoffice/especialidad/EspecialidadPeinado";
     }
     @GetMapping("/EspecialidadMaquillaje")
