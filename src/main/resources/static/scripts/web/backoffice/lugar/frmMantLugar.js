@@ -1,12 +1,10 @@
 $(document).on("click","#btnagregar",function(){
-    $("#txtCiudad").val("");
     $("#txtDistrito").val("");
     $("#hddcodLug").val("0");
     $("#modalNuevo").modal("show");
 });
 
 $(document).on("click", ".btnactualizar", function(){
-    $("#txtCiudad").val($(this).attr("data-ciu"));
     $("#txtDistrito").val($(this).attr("data-distrito"));
      $("#hddcodLug").empty();
     $("#hddcodLug").val($(this).attr("data-cod"));
@@ -19,8 +17,7 @@ $(document).on("click","#btnguardar",function(){
         url:"/lugar/guardar",
         contentType:"application/json",
         data: JSON.stringify({
-            IdLugar: $("#hddcodLug").val(),
-             Ciudad: $("#txtCiudad").val(),
+            id_lugar: $("#hddcodLug").val(),
             Distrito: $("#txtDistrito").val(),
 
 
@@ -45,14 +42,14 @@ function listarLugar(){
             $("#tbllugar > tbody").html("");
             $.each(resultado, function(index, value){
                 $("#tbllugar > tbody").append("<tr>"+
-                    "<td>"+value.IdLugar+"</td>"+
-                    "<td>"+value.Ciudad+"</td>"+
+                    "<td>"+value.id_lugar+"</td>"+
+
                     "<td>"+value.Distrito+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+
-                                     "data-cod='"+value.id_manicura+"'"+
-                                     "data-ciu='"+value.tiempo_manicura+"'"+
-                                     "data-distrito='"+value.precio_manicura+"'"+
+                                     "data-cod='"+value.id_lugar+"'"+
+
+                                     "data-distrito='"+value.Distrito+"'"+
 
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");

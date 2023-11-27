@@ -1,15 +1,13 @@
 $(document).on("click","#btnregistrarPeinado",function(){
-    console.log("Ingresó el btn registrar peinado");
-
-    $("#txtusuario").val();
-    console.log("txt en vacio?");
-
+    $("#txtusuario").val("");
     $("#cboLugar").empty();
+          listarCboLugar(0);
     $("#cboMaquillaje").empty();
     $("#cboEmpleado").empty();
     $("#cboPeinado").empty();
     $("#txtfecha").val("");
-        listarCbo(0);
+    $("#hddcodrePe").val("0");
+    $("#modalNuevo").modal("show");
 });
 
 function listarCboLugar(id_lugar){

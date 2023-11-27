@@ -12,8 +12,13 @@
           rel="stylesheet"/>
     <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}"
             type="text/javascript"></script>
-    <script th:src="@{/scripts/web/backoffice/reserva/frmMantReservaPeinado.js}"
+
+    <script th:src="@{/scripts/jquery/jquery.js}"
             type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script th:src="@{/scripts/web/backoffice/reserva/frmMantReservaPeinado.js}"></script>
+
 </head>
 <body>
 <section class="background-radial-gradient overflow-hidden">
@@ -81,33 +86,71 @@
                 <div class="card bg-glass">
                     <div class="d-flex flex-column card-body px-4 py-5 px-md-5 text-center">
                         <div class="mb-4">
-                            <a th:href="@{/reservaPeinado/reservaPeinado}" id="btnregistrarPeinado" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <button id="btnregistrarPeinado" type="button" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Peinado
-                            </a>
+                            </button>
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservamaquillaje/reservamaquillaje}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Maquillaje
                             </a>
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservamasaje/reservamasaje}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Masaje
                             </a>
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservamanicura/reservamanicura}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Manicure
                             </a>
                         </div>
                         <a th:href="@{/auth/login-success}" class="mt-4">Volver a la página Principal</a>
+                        <div id="mensaje"></div>
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
+    <!-- Modal Reserva Peinado/ Actualizar Reserva Peinado -->
+    <div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Maquillaje</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtusuario">Usuario</label>
+                        <input type="text" id="txtusuario" class="form-control" disabled />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboLugar">Sedes</label>
+                        <select id="cboLugar" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboEmpleado">Empleados</label>
+                        <input id="cboEmpleado" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboPeinado">Peinado</label>
+                        <input id="cboPeinado" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="txtfecha">Fecha de Reserva</label>
+                        <input type="date" id="txtfecha" class="form-control" />
+                    </div>
+                    <input type="hidden" id="hddcodrePe" value="0">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="button" id="btnReserva" class="btn btn-primary"><i class="fas fa-save"></i> Reservar</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
