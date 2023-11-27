@@ -23,6 +23,7 @@
                 <th scope="col">Código</th>
                 <th scope="col">Tiempo</th>
                 <th scope="col">Precio</th>
+                <th scope="col">Descripcion Des</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Actualizar</th>
 
@@ -34,12 +35,14 @@
                 <td th:text="${pei.tiempo_peinado}"></td>
                 <td th:text="${pei.precio_peinado}"></td>
                 <td th:text="${pei.descpeinado.desc_peinado}"></td>
+                <td th:text="${pei.descripcion}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
                             th:data-peicod="${pei.id_peinado}"
                             th:data-peiname="${pei.tiempo_peinado}"
                             th:data-peiprice="${pei.precio_peinado}"
-                            th:data-peiDescPei="${pei.descpeinado.id_desc_peinado}">
+                            th:data-peiDescPei="${pei.descpeinado.id_desc_peinado}"
+                            th:data-peiDesc="${pei.descripcion}">
                         <i class="fas fa-edit"></i></button>
                 </td>
             </tr>
@@ -67,6 +70,10 @@
                 <div class="mb-3">
                     <label for="cbodesc" class="form-label">Descripcion Peinado</label>
                     <select id="cbodesc" class="form-control"></select>
+                </div>
+                <div class="mb-3">
+                    <label for="txtdescripcion" class="form-label">Descripcion</label>
+                    <input id="txtdescripcion" class="form-control">
                 </div>
                 <input type="hidden" id="hddcodpei" value="0">
             </div>

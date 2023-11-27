@@ -7,6 +7,7 @@ $(document).on("click","#btnregistrarPeinado",function(){
     $("#cboEmpleado").empty();
         listarCboEmpleado(0);
     $("#cboPeinado").empty();
+        listarCboPeinado(0);
     $("#txtfecha").val("");
     $("#hddcodrePe").val("0");
     $("#modalNuevo").modal("show");
@@ -38,30 +39,29 @@ function listarCboEmpleado(id_empleado){
         success: function(resultado){
             $.each(resultado, function(index, value){
                 $("#cboEmpleado").append(
-                    `<option value="${value.id_empleado}">${value.nomEmpleado}</option>`
+                    `<option value="${value.id_empleado}">${value.nom_empleado}</option>`
                 )
             });
-            if(id_lugar > 0){
+            if(id_empleado > 0){
                 $("#cboEmpleado").val(id_empleado);
             }
         }
     });
 }
-
-function listarCboLugar(id_lugar){
+function listarCboPeinado(id_peinado){
     $.ajax({
         type: "GET",
-        url: "/lugar/listar",
+        url: "/peinado/listar",
         dataType: "json",
         success: function(resultado){
             $.each(resultado, function(index, value){
-                $("#cboLugar").append(
-                    `<option value="${value.id_lugar}">${value.distrito}</option>`
+                $("#cboPeinado").append(
+                    `<option value="${value.id_peinado}">${value.descripcion}</option>`
                 )
             });
-            if(id_lugar > 0){
-                $("#cboLugar").val(id_lugar);
-            }
+            if(id_peinado > 0){
+                $("#cboPeinado").val(id_peinado);
+                }
+         }
+            });
         }
-    });
-}

@@ -10,4 +10,5 @@ public class PeinadoRequest {
     private String precio_peinado;
     private String tiempo_peinado;
     private Integer id_desc_peinado;
+    private String descripcion;
 }

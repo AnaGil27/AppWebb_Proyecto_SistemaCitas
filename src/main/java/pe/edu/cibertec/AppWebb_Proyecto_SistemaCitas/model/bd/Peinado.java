@@ -23,4 +23,7 @@ public class Peinado {
     @OneToOne
     @JoinColumn(name="id_desc_peinado")
     private DescPeinado descpeinado;
+
+    @Column(name="descripcion")
+    private String descripcion;
 }

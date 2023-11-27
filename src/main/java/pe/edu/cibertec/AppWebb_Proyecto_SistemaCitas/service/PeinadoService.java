@@ -29,6 +29,7 @@ public class PeinadoService {
             }
             objPeinado.setPrecio_peinado(peinado.getPrecio_peinado());
             objPeinado.setTiempo_peinado(peinado.getTiempo_peinado());
+            objPeinado.setDescripcion(peinado.getDescripcion());
 
             DescPeinado descPeinado = new DescPeinado();
             descPeinado.setId_desc_peinado(peinado.getId_desc_peinado());
