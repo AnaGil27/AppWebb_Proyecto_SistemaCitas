@@ -9,4 +9,5 @@ public class ManicuraRequest {
     private String precio_manicura;
     private String tiempo_manicura;
     private Integer id_desc_manicura;
+    private String descripcion;
 }

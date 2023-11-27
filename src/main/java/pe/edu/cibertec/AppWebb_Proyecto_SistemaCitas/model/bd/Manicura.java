@@ -24,4 +24,8 @@ public class Manicura {
     @OneToOne
     @JoinColumn(name = "id_desc_manicura")
     private DescManicura descmanicura;
+
+    @Column(name="descripcion")
+    private String descripcion;
+
 }

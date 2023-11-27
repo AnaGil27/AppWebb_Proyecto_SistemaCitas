@@ -2,6 +2,7 @@ $(document).on("click","#btnagregar",function(){
     $("#txttiempo").val("");
     $("#txtprecio").val("");
     $("#cbodesc").empty();
+    $("#txtdescripcion").val("");
     $("#hddcodmaqui").val("0");
         listarCbo(0);
     $("#modalNuevo").modal("show");
@@ -12,6 +13,7 @@ $(document).on("click", ".btnactualizar", function(){
     $("#txtprecio").val($(this).attr("data-maquiprice"));
      $("#cbodesc").empty();
          listarCbo($(this).attr("data-maquiDescMaqui"));
+    $("#txtdescripcion").val($(this).attr("data-peiDes"));
     $("#hddcodmaqui").val($(this).attr("data-maquicod"));
     $("#modalNuevo").modal("show");
 });
@@ -25,7 +27,8 @@ $(document).on("click","#btnguardar",function(){
             id_maquillaje: $("#hddcodmaqui").val(),
              tiempo_maquillaje: $("#txttiempo").val(),
             precio_maquillaje: $("#txtprecio").val(),
-            id_desc_maquillaje: $("#cbodesc").val()
+            id_desc_maquillaje: $("#cbodesc").val(),
+            descripcion: $("#txtdescripcion").val()
 
         }),
         success: function(resultado){
@@ -69,12 +72,14 @@ function listarMaquillaje(){
                     "<td>"+value.tiempo_maquillaje+"</td>"+
                     "<td>"+value.precio_maquillaje+"</td>"+
                     "<td>"+value.descmaquillaje.desc_maquillaje+"</td>"+
+                    "<td>"+value.descripcion+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+
                                      "data-maquicod='"+value.id_maquillaje+"'"+
                                      "data-maquiname='"+value.tiempo_maquillaje+"'"+
                                      "data-maquiprice='"+value.precio_maquillaje+"'"+
                                      "data-maquiDescMaqui='"+value.descmaquillaje.id_desc_maquillaje+"'"+
+                                     "data-peiDesc='"+value.descripcion+"'"+
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");
             })

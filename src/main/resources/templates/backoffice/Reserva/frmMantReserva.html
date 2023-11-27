@@ -154,6 +154,85 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Reserva Manicura/ Actualizar Reserva Manicura -->
+    <div class="modal fade" id="modalNuevoManicura" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabelmanicura">RESERVE SU MANICURA </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtusuariomanicura">Usuario</label>
+                        <input type="text" id="txtusuariomanicura" class="form-control" disabled />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboLugarmanicura">Sedes</label>
+                        <select id="cboLugarmanicura" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboEmpleadomanicura">Empleados</label>
+                        <select id="cboEmpleadomanicura" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboManicura">Manicura</label>
+                        <select id="cboManicura" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="txtfechamanicura">Fecha de Reserva</label>
+                        <input type="date" id="txtfechamanicura" class="form-control" />
+                    </div>
+                    <input type="hidden" id="hddcodreMa" value="0">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="button" id="btnReservamanicura" class="btn btn-primary"><i class="fas fa-save"></i> Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Reserva Maquillaje/ Actualizar Reserva Maquillaje -->
+    <div class="modal fade" id="modalNuevoMaquillaje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabelmaquillaje">RESERVE SU MAQUILLAJE </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtusuariomaquillaje">Usuario</label>
+                        <input type="text" id="txtusuariomaquillaje" class="form-control" disabled />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboLugarmaquillaje">Sedes</label>
+                        <select id="cboLugarmaquillaje" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboEmpleadomaquillaje">Empleados</label>
+                        <select id="cboEmpleadomaquillaje" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboMaquillaje">Maquillaje</label>
+                        <select id="cboMaquillaje" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="txtfechamaquillaje">Fecha de Reserva</label>
+                        <input type="date" id="txtfechamaquillaje" class="form-control" />
+                    </div>
+                    <input type="hidden" id="hddcodreMaqui" value="0">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="button" id="btnReservamaquillaje" class="btn btn-primary"><i class="fas fa-save"></i> Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 </body>
 </html>

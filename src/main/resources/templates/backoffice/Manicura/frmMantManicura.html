@@ -23,7 +23,8 @@
                 <th scope="col">Código</th>
                 <th scope="col">Tiempo</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Descripción</th>
+                <th scope="col">Descripción Des</th>
+                <th scope="col">Descripcion</th>
                 <th scope="col">Actualizar</th>
             </tr>
             </thead>
@@ -33,12 +34,14 @@
                 <td th:text="${man.tiempo_manicura}"></td>
                 <td th:text="${man.precio_manicura}"></td>
                 <td th:text="${man.descmanicura.desc_manicura}"></td>
+                <td th:text="${man.descripcion}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
                             th:data-mancod="${man.id_manicura}"
                             th:data-manname="${man.tiempo_manicura}"
                             th:data-manprice="${man.precio_manicura}"
-                            th:data-manDescMan="${man.descmanicura.id_desc_manicura}">
+                            th:data-manDescMan="${man.descmanicura.id_desc_manicura}"
+                            th:data-peiDesc="${man.descripcion}">
                         <i class="fas fa-edit"></i></button>
                 </td>
             </tr>
@@ -67,6 +70,10 @@
                     <label for="cbodesc" class="form-label">Descripcion de Manicure</label>
                     <select id="cbodesc" class="form-control"></select>
                 </div>
+                <div class="mb-3">
+                    <label for="txtdescripcion" class="form-label">Descripcion</label>
+                    <input id="txtdescripcion" class="form-control">
+                </div>
                 <input type="hidden" id="hddcodman" value="0">
             </div>
             <div class="modal-footer">
@@ -76,8 +83,5 @@
         </div>
     </div>
 </div>
-
-
-
 </body>
 </html>

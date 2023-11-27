@@ -28,6 +28,7 @@ public class ManicuraService {
             }
             objManicura.setPrecio_manicura(manicura.getPrecio_manicura());
             objManicura.setTiempo_manicura(manicura.getTiempo_manicura());
+            objManicura.setDescripcion(manicura.getDescripcion());
 
             DescManicura descManicura = new DescManicura();
             descManicura.setId_desc_manicura(manicura.getId_desc_manicura());

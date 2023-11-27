@@ -24,6 +24,7 @@
                 <th scope="col">Tiempo</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">Descripcion</th>
                 <th scope="col">Actualizar</th>
 
             </tr>
@@ -34,12 +35,14 @@
                 <td th:text="${maqui.tiempo_maquillaje}"></td>
                 <td th:text="${maqui.precio_maquillaje}"></td>
                 <td th:text="${maqui.descmaquillaje.desc_maquillaje}"></td>
+                <td th:text="${maqui.descripcion}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
                             th:data-maquicod="${maqui.id_maquillaje}"
                             th:data-maquiname="${maqui.tiempo_maquillaje}"
                             th:data-maquiprice="${maqui.precio_maquillaje}"
-                            th:data-maquiDescMaqui="${maqui.descmaquillaje.id_desc_maquillaje}">
+                            th:data-maquiDescMaqui="${maqui.descmaquillaje.id_desc_maquillaje}"
+                            th:data-peiDesc="${maqui.descripcion}">
                         <i class="fas fa-edit"></i></button>
                 </td>
             </tr>
@@ -65,8 +68,12 @@
                     <input type="text" class="form-control" id="txtprecio">
                 </div>
                 <div class="mb-3">
-                    <label for="cbodesc" class="form-label">Descripcion Maquillaje</label>
+                    <label for="cbodesc" class="form-label">Descripcion de Maquillaje</label>
                     <select id="cbodesc" class="form-control"></select>
+                </div>
+                <div class="mb-3">
+                    <label for="txtdescripcion" class="form-label">Descripcion</label>
+                    <input id="txtdescripcion" class="form-control">
                 </div>
                 <input type="hidden" id="hddcodmaqui" value="0">
             </div>

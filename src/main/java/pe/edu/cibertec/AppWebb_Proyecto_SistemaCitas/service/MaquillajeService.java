@@ -25,6 +25,7 @@ public class MaquillajeService {
             }
             objMaquillaje.setPrecio_maquillaje(maquillaje.getPrecio_maquillaje());
             objMaquillaje.setTiempo_maquillaje(maquillaje.getTiempo_maquillaje());
+            objMaquillaje.setDescripcion(maquillaje.getDescripcion());
 
             DescMaquillaje descMaquillaje = new DescMaquillaje();
             descMaquillaje.setId_desc_maquillaje(maquillaje.getId_desc_maquillaje());

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,4 +24,8 @@ public class Maquillaje {
     @OneToOne
     @JoinColumn(name="id_desc_maquillaje")
     private DescMaquillaje descmaquillaje;
+
+    @Column(name="descripcion")
+    private String descripcion;
+
 }

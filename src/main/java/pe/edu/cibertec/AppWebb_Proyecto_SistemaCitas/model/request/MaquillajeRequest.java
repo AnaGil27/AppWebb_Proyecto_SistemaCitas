@@ -9,4 +9,5 @@ public class MaquillajeRequest {
     private String precio_maquillaje;
     private String tiempo_maquillaje;
     private Integer id_desc_maquillaje;
+    private String descripcion;
 }
