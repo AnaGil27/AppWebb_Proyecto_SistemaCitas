@@ -3,6 +3,7 @@ package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Empleado;
+import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Lugar;
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.request.EmpleadoRequest;
 
 import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.response.ResultadoResponse;
@@ -30,6 +31,10 @@ public class EmpleadoService {
             objEmpleado.setNomEmpleado(empleado.getNomEmpleado());
             objEmpleado.setApeEmpleado(empleado.getApeEmpleado());
             objEmpleado.setCelularEmpleado(empleado.getCelularEmpleado());
+
+            Lugar lugar = new Lugar();
+            lugar.setId_lugar(empleado.getId_lugar());
+            objEmpleado.setLugar(lugar);
 
             empleadoRepository.save(objEmpleado);
 

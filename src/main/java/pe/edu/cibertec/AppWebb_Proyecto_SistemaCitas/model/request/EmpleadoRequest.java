@@ -1,5 +1,6 @@
 package pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.request;
 import lombok.Data;
+import pe.edu.cibertec.AppWebb_Proyecto_SistemaCitas.model.bd.Lugar;
 
 @Data
 public class EmpleadoRequest {
@@ -7,4 +8,5 @@ public class EmpleadoRequest {
     private String NomEmpleado;
     private String ApeEmpleado;
     private String CelularEmpleado;
+    private Integer id_lugar;
 }

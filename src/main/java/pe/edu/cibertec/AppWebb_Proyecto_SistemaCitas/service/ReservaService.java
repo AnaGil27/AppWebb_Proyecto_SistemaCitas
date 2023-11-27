@@ -29,21 +29,10 @@ public class ReservaService {
             usuario.setIdusuario(reserva.getIdusuario());
             objReserva.setUsuario(usuario);
 
-            Manicura manicura = new Manicura();
-            manicura.setId_manicura(reserva.getId_manicura());
-            objReserva.setManicura(manicura);
+            Servicio servicio = new Servicio();
+            servicio.setIdServicios(servicio.getIdServicios());
+            objReserva.setServicio(servicio);
 
-            Peinado peinado = new Peinado();
-            peinado.setId_peinado(reserva.getId_peinado());
-            objReserva.setPeinado(peinado);
-
-            Masaje masaje = new Masaje();
-            masaje.setId_masaje(reserva.getId_masaje());
-            objReserva.setMasaje(masaje);
-
-            Maquillaje maquillaje = new Maquillaje();
-            maquillaje.setId_maquillaje(reserva.getId_maquillaje());
-            objReserva.setMaquillaje(maquillaje);
 
             Empleado empleado = new Empleado();
             empleado.setId_empleado(reserva.getId_empleado());

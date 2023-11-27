@@ -25,20 +25,8 @@ public class Reserva {
     private Usuario usuario;
 
     @OneToOne
-    @JoinColumn(name="id_manicura")
-    private Manicura manicura;
-
-    @OneToOne
-    @JoinColumn(name="id_peinado")
-    private Peinado peinado;
-
-    @OneToOne
-    @JoinColumn(name="id_masaje")
-    private Masaje masaje;
-
-    @OneToOne
-    @JoinColumn(name="id_maquillaje")
-    private Maquillaje maquillaje;
+    @JoinColumn(name= "IdServicios")
+    private Servicio servicio;
 
     @OneToOne
     @JoinColumn(name="id_empleado")

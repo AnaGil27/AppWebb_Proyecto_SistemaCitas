@@ -22,4 +22,8 @@ public class Empleado {
     private String ApeEmpleado;
     @Column(name = "CelularEmpleado")
     private String CelularEmpleado;
+
+    @OneToOne
+    @JoinColumn(name="id_lugar")
+    private Lugar lugar;
 }
