@@ -13,10 +13,15 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/reserva")
+@RequestMapping("/reservaPeinado")
 public class ReservaPeinadoController {
 
     private ReservaPeinadoService reservaPeinadoService;
+
+    @GetMapping("/reservaPeinado")
+    public String reservaPeinado() {
+        return "backoffice/Reserva/frmMantReservaPeinado";
+    }
 
     @GetMapping("")
     public String index(Model model){
@@ -24,12 +29,13 @@ public class ReservaPeinadoController {
                 reservaPeinadoService.listarReservaPeinado());
         return "backoffice/reserva/frmMantReservaPeinado";
     }
-    @GetMapping("/listar")
+    @GetMapping("/listarReservaPeinado")
     @ResponseBody
     public List<ReservaPeinado> listarReservaPeinado(){
         return reservaPeinadoService.listarReservaPeinado();
     }
-    @PostMapping("/guardar")
+
+    @PostMapping("/guardarReservaPeinado")
     @ResponseBody
     public ResultadoResponse guardarReservaPeinado(
             @RequestBody ReservaPeinadoRequest reservaRequest
