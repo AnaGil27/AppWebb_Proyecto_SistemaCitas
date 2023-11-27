@@ -11,6 +11,9 @@
             type="text/javascript"></script>
     <script th:src="@{/scripts/jquery/jquery.js}"
             type="text/javascript"></script>
+    <script th:src="@{/scripts/web/backoffice/reserva/frmMantReservaPeinado.js}"
+            type="text/javascript"></script>
+
 </head>
 <body>
 
@@ -32,18 +35,16 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <h2 class="fw-bold mb-5">Reserva tu Peinado</h2>
-                    <form th:action="@{/reservaPeinado/guardarReservaPeinado}" method="post">
+                    <form th:action="@{/reservaPeinado/guardarReservaPeinado}" method="post" id="reservaPeinadoForm">
 
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="idusuario">Usuario</label>
-                            <input type="text" id="idusuario" class="form-control" disabled />
-
+                            <label class="form-label" for="txtusuario">Usuario</label>
+                            <input type="text" id="txtusuario" class="form-control" disabled />
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="cboLugar">Sedes</label>
-                            <input id="cboLugar" class="form-control" />
-
+                            <select id="cboLugar" class="form-control"></select>
                         </div>
 
                         <div class="form-outline mb-4">
@@ -59,8 +60,8 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="fecha">Fecha de Reserva</label>
-                            <input type="date" id="fecha" class="form-control" />
+                            <label class="form-label" for="txtfecha">Fecha de Reserva</label>
+                            <input type="date" id="txtfecha" class="form-control" />
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block mb-4">

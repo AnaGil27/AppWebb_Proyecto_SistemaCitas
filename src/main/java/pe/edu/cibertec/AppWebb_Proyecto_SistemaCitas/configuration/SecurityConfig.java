@@ -43,7 +43,7 @@ public class SecurityConfig {
                                         .usernameParameter("nomusuario")
                                         .passwordParameter("password")
                                         .failureUrl("/auth/login?error=true")
-                ).authenticationProvider(authenticationProvider());
+                ).authenticationProvider(authenticationProvider()).csrf((csrf) -> csrf.disable());
 
         return http.build();
     }
