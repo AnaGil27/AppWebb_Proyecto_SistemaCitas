@@ -10,7 +10,7 @@
 <nav th:replace="~{layout::menu}"></nav>
 <div class="card ">
     <div class="card-header text-bg-dark mb-3">
-        Mantenimiento de Manicure
+        Mantenimiento de Empleados
     </div>
     <div class="card-body">
         <button id="btnagregar"
@@ -24,21 +24,24 @@
                 <th scope="col">NomEmpleado</th>
                 <th scope="col">ApeEmpleado</th>
                 <th scope="col">CelularEmpleado</th>
+                <th scope="col">Distrito</th>
                 <th scope="col">Actualizar</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="man :${listarEmpleado}">
-                <td th:text="${emp.IdEmpleado}"></td>
-                <td th:text="${emp.NomEmpleado}"></td>
-                <td th:text="${emp.ApeEmpleado}"></td>
-                <td th:text="${emp.CelularEmpleado}"></td>
+            <tr th:each="emp :${listarEmpleado}">
+                <td th:text="${emp.id_empleado}"></td>
+                <td th:text="${emp.nom_empleado}"></td>
+                <td th:text="${emp.ape_empleado}"></td>
+                <td th:text="${emp.celular_empleado}"></td>
+                <td th:text="${emp.lugar.distrito}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
-                            th:data-cod="${emp.IdEmpleado}"
-                            th:data-nom="${emp.NomEmpleado}"
-                            th:data-ape="${emp.ApeEmpleado}"
-                            th:data-cel="${emp.CelularEmpleado}">
+                            th:data-cod="${emp.id_empleado}"
+                            th:data-nom="${emp.nom_empleado}"
+                            th:data-ape="${emp.ape_empleado}"
+                            th:data-cel="${emp.celular_empleado}"
+                            th:text="${emp.lugar.id_lugar}">
                         <i class="fas fa-edit"></i></button>
                 </td>
             </tr>
@@ -46,12 +49,12 @@
         </table>
     </div>
 </div>
-<!-- Modal Registrar / Actualizar Manicure -->
+<!-- Modal Registrar / Actualizar Empleado -->
 <div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Manicure</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Empleado</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -66,6 +69,10 @@
                 <div class="mb-3">
                     <label for="txtCelular" class="form-label">Celular </label>
                     <input type="text" class="form-control" id="txtCelular">
+                </div>
+                <div class="mb-3">
+                    <label for="txtDistrito" class="form-label">Celular </label>
+                    <select class="form-control" id="txtDistrito"></select>
                 </div>
 
                 <input type="hidden" id="hddcodEmp" value="0">

@@ -47,19 +47,22 @@ function listarEmpleado(){
             $("#tblEmpleado > tbody").html("");
             $.each(resultado, function(index, value){
                 $("#tblEmpleado > tbody").append("<tr>"+
-                    "<td>"+value.IdEmpleado+"</td>"+
-                    "<td>"+value.NomEmpleado+"</td>"+
-                    "<td>"+value.ApeEmpleado+"</td>"+
-                    "<td>"+value.CelularEmpleado+"</td>"+
+                    "<td>"+value.id_empleado+"</td>"+
+                    "<td>"+value.nom_empleado+"</td>"+
+                    "<td>"+value.ape_empleado+"</td>"+
+                    "<td>"+value.celular_empleado+"</td>"+
+                    "<td>"+value.lugar.distrito+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+
-                                     "data-cod='"+value.IdEmpleado+"'"+
-                                     "data-nom='"+value.NomEmpleado+"'"+
-                                     "data-ape='"+value.ApeEmpleado+"'"+
-                                    "data-cel='"+value.CelularEmpleado+"'"+
+                                     "data-cod='"+value.id_empleado+"'"+
+                                     "data-nom='"+value.nom_empleado+"'"+
+                                     "data-ape='"+value.ape_empleado+"'"+
+                                    "data-cel='"+value.celular_empleado+"'"+
+                                    "data-lug='"+value.lugar.id_lugar+"'"+
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");
             })
         }
     })
 }
+

@@ -56,4 +56,5 @@ public class LoginController {
         emailService.enviarCorreoConfirmacion(usuario);
         return "frontoffice/auth/frmLogin";
     }
+
 }

@@ -44,12 +44,12 @@ function listarLugar(){
                 $("#tbllugar > tbody").append("<tr>"+
                     "<td>"+value.id_lugar+"</td>"+
 
-                    "<td>"+value.Distrito+"</td>"+
+                    "<td>"+value.distrito+"</td>"+
                     "<td>"+
                         "<button type='button' class='btn btn-info btnactualizar'"+
                                      "data-cod='"+value.id_lugar+"'"+
 
-                                     "data-distrito='"+value.Distrito+"'"+
+                                     "data-distrito='"+value.distrito+"'"+
 
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");

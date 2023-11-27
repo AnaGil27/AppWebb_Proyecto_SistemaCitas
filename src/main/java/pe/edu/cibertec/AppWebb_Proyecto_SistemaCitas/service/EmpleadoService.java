@@ -28,9 +28,9 @@ public class EmpleadoService {
             if(empleado.getIdEmpleado()>0){
                 objEmpleado.setId_empleado(empleado.getIdEmpleado());
             }
-            objEmpleado.setNomEmpleado(empleado.getNomEmpleado());
-            objEmpleado.setApeEmpleado(empleado.getApeEmpleado());
-            objEmpleado.setCelularEmpleado(empleado.getCelularEmpleado());
+            objEmpleado.setNom_empleado(empleado.getNom_empleado());
+            objEmpleado.setApe_empleado(empleado.getApe_empleado());
+            objEmpleado.setCelular_empleado(empleado.getCelular_empleado());
 
             Lugar lugar = new Lugar();
             lugar.setId_lugar(empleado.getId_lugar());

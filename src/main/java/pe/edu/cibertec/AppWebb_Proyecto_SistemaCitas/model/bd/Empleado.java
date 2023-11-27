@@ -16,12 +16,12 @@ public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_empleado;
-    @Column(name = "NomEmpleado")
-    private String NomEmpleado;
-    @Column(name = "ApeEmpleado")
-    private String ApeEmpleado;
-    @Column(name = "CelularEmpleado")
-    private String CelularEmpleado;
+    @Column(name = "nom_empleado")
+    private String nom_empleado;
+    @Column(name = "ape_empleado")
+    private String ape_empleado;
+    @Column(name = "celular_empleado")
+    private String celular_empleado;
 
     @OneToOne
     @JoinColumn(name="id_lugar")

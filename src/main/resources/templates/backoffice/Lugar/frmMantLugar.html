@@ -28,11 +28,11 @@
             <tbody>
             <tr th:each="lug :${listarLugar}">
                 <td th:text="${lug.id_lugar}"></td>
-                <td th:text="${lug.Distrito}"></td>
+                <td th:text="${lug.distrito}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
                             th:data-cod="${lug.id_lugar}"
-                            th:data-distrito="${lug.Distrito}">
+                            th:data-distrito="${lug.distrito}">
                         <i class="fas fa-edit"></i></button>
                 </td>
             </tr>

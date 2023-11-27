@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class LugarRequest {
     private Integer id_lugar;
-    private String Distrito;
+    private String distrito;
 }
