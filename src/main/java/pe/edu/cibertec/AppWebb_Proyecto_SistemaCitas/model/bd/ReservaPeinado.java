@@ -6,38 +6,36 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="reserva")
-public class Reserva {
+@Table(name="reservapeinado")
+public class ReservaPeinado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_reserva;
+    private Integer id_reservaPeinado;
 
     @OneToOne
     @JoinColumn(name="idusuario")
     private Usuario usuario;
 
     @OneToOne
-    @JoinColumn(name= "IdServicios")
-    private Servicio servicio;
+    @JoinColumn(name="id_lugar")
+    private Lugar lugar;
 
     @OneToOne
     @JoinColumn(name="id_empleado")
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="id_lugar")
-    private Lugar lugar;
+    @JoinColumn(name="id_peinado")
+    private Peinado peinado;
 
-    @Column(name="fecha_reserva")
-    private String FechaReserva;
+    @Column(name="fechaP")
+    private String fechaP;
 
 
 }
