@@ -19,6 +19,11 @@ import java.util.List;
 public class ReservaMaquillajeController {
     private ReservaMaquillajeService reservaMaquillajeService;
 
+    @GetMapping("/reservamaquillaje")
+    public String reservamaquillaje() {
+        return "backoffice/Reserva/frmMantReservaMaquillaje";
+    }
+
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("listaReservaMaquillaje",

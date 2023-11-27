@@ -16,7 +16,10 @@ import java.util.List;
 @RequestMapping("/reservamanicura")
 public class ReservaManicuraController {
     private ReservaManicuraService reservaManicuraService;
-
+    @GetMapping("/reservamanicura")
+    public String reservamanicura() {
+        return "backoffice/Reserva/frmMantReservaManicura";
+    }
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("listaReservaManicura",

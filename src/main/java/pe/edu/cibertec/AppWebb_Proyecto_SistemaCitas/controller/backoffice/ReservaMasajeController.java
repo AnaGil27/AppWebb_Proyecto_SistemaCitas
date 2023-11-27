@@ -13,10 +13,14 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/reserva")
+@RequestMapping("/reservamasaje")
 public class ReservaMasajeController {
     private ReservaMasajeService reservaMasajeService;
 
+    @GetMapping("/reservamasaje")
+    public String reservamasaje() {
+        return "backoffice/Reserva/frmMantReservaMasaje";
+    }
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("listaReservaMasaje",
