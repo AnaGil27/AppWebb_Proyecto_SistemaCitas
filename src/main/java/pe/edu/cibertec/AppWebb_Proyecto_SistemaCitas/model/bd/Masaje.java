@@ -26,4 +26,7 @@ public class Masaje {
     @OneToOne
     @JoinColumn(name = "id_desc_masaje")
     private DescMasaje descmasaje;
+
+    @Column(name="descripcion")
+    private String descripcion;
 }

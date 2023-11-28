@@ -28,7 +28,7 @@ public class MasajeService {
             }
             objMasaje.setPrecio_masaje((masaje.getPrecio_masaje()));
             objMasaje.setTiempo_masaje((masaje.getTiempo_masaje()));
-
+            objMasaje.setDescripcion((masaje.getDescripcion()));
 
             DescMasaje descMasaje = new DescMasaje();
             descMasaje.setId_desc_masaje(masaje.getId_desc_masaje());

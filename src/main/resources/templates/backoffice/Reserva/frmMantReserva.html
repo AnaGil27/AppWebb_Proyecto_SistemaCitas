@@ -92,20 +92,20 @@
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <a id="btnregistrarMaquillaje" type="button" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Maquillaje
                             </a>
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                            <a id="btnregistrarMasaje" type="button" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
                                 Registrar Masaje
                             </a>
                         </div>
 
                         <div class="mb-4">
-                            <a th:href="@{/reservaPeinado/reservaPeinado}" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
-                                Registrar Manicure
+                            <a id="btnregistrarManicura" type="button" class="btn btn-primary btn-block" style="background-color: purple; color: white; text-decoration: none; cursor: pointer; display: block;">
+                                Registrar Manicura
                             </a>
                         </div>
                         <a th:href="@{/auth/login-success}" class="mt-4">Volver a la página Principal</a>
@@ -137,9 +137,19 @@
                         <label class="form-label" for="cboEmpleado">Empleados</label>
                         <select id="cboEmpleado" class="form-control"></select>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cboPeinado">Peinado</label>
-                        <select id="cboPeinado" class="form-control"></select>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="cboPeinado">Peinado</label>
+                                <select id="cboPeinado" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="txtPrecio">Precio</label>
+                                <input type="text" id="txtPrecio" class="form-control" disabled>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtfecha">Fecha de Reserva</label>
@@ -176,10 +186,22 @@
                         <label class="form-label" for="cboEmpleadomanicura">Empleados</label>
                         <select id="cboEmpleadomanicura" class="form-control"></select>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cboManicura">Manicura</label>
-                        <select id="cboManicura" class="form-control"></select>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="cboManicura">Manicura</label>
+                                <select id="cboManicura" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="txtPreciomanicura">Precio</label>
+                                <input type="text" id="txtPreciomanicura" class="form-control" disabled>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label" for="txtfechamanicura">Fecha de Reserva</label>
                         <input type="date" id="txtfechamanicura" class="form-control" />
@@ -215,10 +237,21 @@
                         <label class="form-label" for="cboEmpleadomaquillaje">Empleados</label>
                         <select id="cboEmpleadomaquillaje" class="form-control"></select>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cboMaquillaje">Maquillaje</label>
-                        <select id="cboMaquillaje" class="form-control"></select>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="cboMaquillaje">Maquillaje</label>
+                                <select id="cboMaquillaje" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="txtPrecioMaqui">Precio</label>
+                                <input type="text" id="txtPrecioMaqui" class="form-control" disabled>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label" for="txtfechamaquillaje">Fecha de Reserva</label>
                         <input type="date" id="txtfechamaquillaje" class="form-control" />
@@ -228,6 +261,56 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
                     <button type="button" id="btnReservamaquillaje" class="btn btn-primary"><i class="fas fa-save"></i> Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Reserva Masaje/ Actualizar Reserva Masaje -->
+    <div class="modal fade" id="modalNuevoMasaje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabelMasaje">RESERVE SU MASAJE </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtusuarioMasaje">Usuario</label>
+                        <input type="text" id="txtusuarioMasaje" class="form-control" disabled />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboLugarMasaje">Sedes</label>
+                        <select id="cboLugarMasaje" class="form-control"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="cboEmpleadoMasaje">Empleados</label>
+                        <select id="cboEmpleadoMasaje" class="form-control"></select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="cboMasaje">Masaje</label>
+                                <select id="cboMasaje" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="txtPrecioMasa">Precio</label>
+                                <input type="text" id="txtPrecioMasa" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="txtfechaMasaje">Fecha de Reserva</label>
+                        <input type="date" id="txtfechaMasaje" class="form-control" />
+                    </div>
+                    <input type="hidden" id="hddcodreMasaje" value="0">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="button" id="btnReservaMasaje" class="btn btn-primary"><i class="fas fa-save"></i> Reservar</button>
                 </div>
             </div>
         </div>

@@ -5,9 +5,9 @@ $(document).on("click","#btnregistrarManicura",function(){
     $("#cboEmpleadomanicura").empty();
         listarCboEmpleado(0);
     $("#cboManicura").empty();
-        listarCboPeinado(0);
+        listarCboManicura(0);
     $("#txtfechamanicura").val("");
-    $("#hddcodreMa").val("0");
+    $("#hddcodman").val("0");
     $("#modalNuevoManicura").modal("show");
 });
 
@@ -46,20 +46,31 @@ function listarCboEmpleado(id_empleado){
         }
     });
 }
-function listarCboManicura(id_manicura){
+
+
+function listarCboManicura(id_manicura) {
     $.ajax({
         type: "GET",
         url: "/manicura/listar",
         dataType: "json",
-        success: function(resultado){
-            $.each(resultado, function(index, value){
+        success: function(resultado) {
+            $.each(resultado, function(index, value) {
                 $("#cboManicura").append(
-                    `<option value="${value.id_manicura}">${value.descripcion}</option>`
-                )
+                    `<option value="${value.id_manicura}" data-precio="${value.precio_mnicura}">${value.descripcion}</option>`
+                );
             });
-            if(id_peinado > 0){
+
+            if (id_manicura > 0) {
                 $("#cboManicura").val(id_manicura);
+            }
+
+            // Manejar el evento de cambio en el select para mostrar el precio
+            $("#cboManicura").change(function() {
+                var precioSeleccionado = $("option:selected", this).data("precio");
+                if (precioSeleccionado) {
+                    $("#txtPreciomanicura").val(precioSeleccionado);
                 }
-         }
             });
         }
+    });
+}

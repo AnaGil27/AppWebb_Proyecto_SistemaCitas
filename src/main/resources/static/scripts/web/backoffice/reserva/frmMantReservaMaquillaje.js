@@ -1,11 +1,11 @@
-$(document).on("click","#btnregistrarManicura",function(){
+$(document).on("click","#btnregistrarMaquillaje",function(){
     $("#txtusuariomaquillaje").val();
     $("#cboLugarmaquillaje").empty();
         listarCboLugar(0);
     $("#cboEmpleadomaquillaje").empty();
         listarCboEmpleado(0);
     $("#cboMaquillaje").empty();
-        listarCboPeinado(0);
+        listarCboMaquillaje(0);
     $("#txtfechamaquillaje").val("");
     $("#hddcodreMaqui").val("0");
     $("#modalNuevoMaquillaje").modal("show");
@@ -46,20 +46,30 @@ function listarCboEmpleado(id_empleado){
         }
     });
 }
-function listarCboMaquillaje(id_maquillaje){
+
+function listarCboMaquillaje(id_maquillaje) {
     $.ajax({
         type: "GET",
         url: "/maquillaje/listar",
         dataType: "json",
-        success: function(resultado){
-            $.each(resultado, function(index, value){
+        success: function(resultado) {
+            $.each(resultado, function(index, value) {
                 $("#cboMaquillaje").append(
-                    `<option value="${value.id_maquillaje}">${value.descripcion}</option>`
-                )
+                    `<option value="${value.id_maquillaje}" data-precio="${value.precio_maquillaje}">${value.descripcion}</option>`
+                );
             });
-            if(id_peinado > 0){
+
+            if (id_maquillaje > 0) {
                 $("#cboMaquillaje").val(id_maquillaje);
+            }
+
+            // Manejar el evento de cambio en el select para mostrar el precio
+            $("#cboMaquillaje").change(function() {
+                var precioSeleccionado = $("option:selected", this).data("precio");
+                if (precioSeleccionado) {
+                    $("#txtPrecioMaqui").val(precioSeleccionado);
                 }
-         }
             });
         }
+    });
+}

@@ -3,7 +3,7 @@ $(document).on("click","#btnagregar",function(){
     $("#txtprecio").val("");
     $("#cbodesc").empty();
     $("#txtdescripcion").val("");
-    $("#hddcodpei").val("0");
+    $("#hddcodman").val("0");
         listarCbo(0);
     $("#modalNuevo").modal("show");
 });
@@ -13,7 +13,7 @@ $(document).on("click", ".btnactualizar", function(){
     $("#txtprecio").val($(this).attr("data-manprice"));
      $("#cbodesc").empty();
          listarCbo($(this).attr("data-manDescMan"));
-    $("#txtdescripcion").val($(this).attr("data-peiDes"));
+    $("#txtdescripcion").val($(this).attr("data-manDesc"));
     $("#hddcodman").val($(this).attr("data-mancod"));
     $("#modalNuevo").modal("show");
 });
@@ -78,7 +78,7 @@ function listarManicura(){
                                      "data-manname='"+value.tiempo_manicura+"'"+
                                      "data-manprice='"+value.precio_manicura+"'"+
                                      "data-manDescMan='"+value.descmanicura.id_desc_manicura+"'"+
-                                     "data-peiDesc='"+value.descripcion+"'"+
+                                     "data-manDesc='"+value.descripcion+"'"+
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");
             })

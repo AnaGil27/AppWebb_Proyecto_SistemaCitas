@@ -79,7 +79,7 @@ function listarMaquillaje(){
                                      "data-maquiname='"+value.tiempo_maquillaje+"'"+
                                      "data-maquiprice='"+value.precio_maquillaje+"'"+
                                      "data-maquiDescMaqui='"+value.descmaquillaje.id_desc_maquillaje+"'"+
-                                     "data-peiDesc='"+value.descripcion+"'"+
+                                     "data-maquiDesc='"+value.descripcion+"'"+
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");
             })

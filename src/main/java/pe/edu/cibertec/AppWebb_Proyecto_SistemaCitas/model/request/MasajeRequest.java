@@ -10,6 +10,7 @@ public class MasajeRequest {
     private String precio_masaje;
     private String tiempo_masaje;
     private Integer id_desc_masaje;
+    private String descripcion;
 
 
 }
