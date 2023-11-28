@@ -41,6 +41,7 @@ public class ReservaManicuraService {
 
             Manicura manicura = new Manicura();
             manicura.setId_manicura(reservaManicura.getId_manicura());
+            manicura.setPrecio_manicura(manicura.getPrecio_manicura());
             objReservaManicura.setManicura(manicura);
 
             objReservaManicura.setFechaM(reservaManicura.getFechaM());

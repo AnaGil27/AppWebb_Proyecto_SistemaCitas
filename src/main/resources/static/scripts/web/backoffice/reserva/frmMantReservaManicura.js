@@ -6,6 +6,7 @@ $(document).on("click","#btnregistrarManicura",function(){
         listarCboEmpleado(0);
     $("#cboManicura").empty();
         listarCboManicura(0);
+    $("#txtPreciomanicura").val("");
     $("#txtfechamanicura").val("");
     $("#hddcodman").val("0");
     $("#modalNuevoManicura").modal("show");
@@ -56,7 +57,7 @@ function listarCboManicura(id_manicura) {
         success: function(resultado) {
             $.each(resultado, function(index, value) {
                 $("#cboManicura").append(
-                    `<option value="${value.id_manicura}" data-precio="${value.precio_mnicura}">${value.descripcion}</option>`
+                    `<option value="${value.id_manicura}" data-precio="${value.precio_manicura}">${value.descripcion}</option>`
                 );
             });
 
@@ -74,3 +75,27 @@ function listarCboManicura(id_manicura) {
         }
     });
 }
+
+$(document).on("click","#btnReservamanicura",function(){
+    $.ajax({
+        type:"Post",
+        url:"/reservamanicura/guardar",
+        contentType:"application/json",
+        data: JSON.stringify({
+            id_reserva_manicura: $("#hddcodman").val(),
+            idusuario: $("#txtusuariomanicura").val(),
+            id_lugar: $("#cboLugarmanicura").val(),
+            id_empleado: $("#cboEmpleadomanicura").val(),
+            id_manicura: $("#cboManicura").val(),
+            fechaM: $("#txtfechamanicura").val()
+
+        }),
+        success: function(resultado){
+         if(resultado.respuesta){
+             listarManicura();
+        }
+             alert(resultado.mensaje);
+        }
+    });
+     $("#modalNuevoManicura").modal("hide");
+});
