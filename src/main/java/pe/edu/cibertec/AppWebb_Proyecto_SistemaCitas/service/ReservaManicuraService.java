@@ -48,7 +48,7 @@ public class ReservaManicuraService {
 
             reservaManicuraRepository.save(objReservaManicura);
         }catch (Exception ex){
-            mensaje = "Reserva no registrada";
+            mensaje = "Reserva registrada correctamente , muchas gracias mi estimado";
             respuesta = false;
         }
         return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();

@@ -10,6 +10,7 @@ $(document).on("click","#btnregistrarManicura",function(){
     $("#txtfechamanicura").val("");
     $("#hddcodman").val("0");
     $("#modalNuevoManicura").modal("show");
+
 });
 
 function listarCboLugar(id_lugar){
@@ -99,3 +100,33 @@ $(document).on("click","#btnReservamanicura",function(){
     });
      $("#modalNuevoManicura").modal("hide");
 });
+
+function listarReservaManicura(){
+    $.ajax({
+        type: "GET",
+        url: "/reservamanicura/listar",
+        dataType: "json",
+        success: function(resultado){
+            $("#tblmanicura > tbody").html("");
+            $.each(resultado, function(index, value){
+                $("#tblmanicura > tbody").append("<tr>"+
+                    "<td>"+value.id_reserva_manicura+"</td>"+
+                    "<td>"+value.usuario.nomusuario+"</td>"+
+                    "<td>"+value.lugar.distrito+"</td>"+
+                    "<td>"+value.empleado.nom_empleado+"</td>"+
+                      "<td>"+value.manicura.descripcion+"</td>"+
+                    "<td>"+value.fechaM+"</td>"+
+                    "<td>"+
+                        "<button type='button' class='btn btn-info btnactualizar'"+
+                                     "data-mancod='"+value.id_reserva_manicura+"'"+
+                                     "data-manusu='"+value.usuario.idusuario+"'"+
+                                     "data-manlu='"+value.lugar.id_lugar+"'"+
+                                     "data-manemp='"+value.empleado.id_empleado+"'"+
+                                      "data-manmani='"+value.manicura.id_manicura+"'"+
+                                     "data-manfecha='"+value.fechaM+"'"+
+                                     "><i class='fas fa-edit'></i></button>"+
+                    "</td></tr>");
+            })
+        }
+    })
+}
