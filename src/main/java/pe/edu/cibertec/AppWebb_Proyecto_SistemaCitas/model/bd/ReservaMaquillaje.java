@@ -29,7 +29,7 @@ public class ReservaMaquillaje {
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="id_maquillaje")
+    @JoinColumn(name="idmaquillaje")
     private Maquillaje maquillaje;
 
     @Column(name="fechaP")

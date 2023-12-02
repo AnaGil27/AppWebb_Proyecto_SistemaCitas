@@ -31,7 +31,7 @@ public class ReservaManicura {
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="id_manicura")
+    @JoinColumn(name="idmanicura")
     private Manicura manicura;
 
     @Column(name="fechaM")

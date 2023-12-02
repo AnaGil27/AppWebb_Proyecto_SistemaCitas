@@ -30,7 +30,7 @@ public class ReservaMasaje {
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="id_masaje")
+    @JoinColumn(name="idmasaje")
     private Masaje masaje;
 
     @Column(name="fechaJ")

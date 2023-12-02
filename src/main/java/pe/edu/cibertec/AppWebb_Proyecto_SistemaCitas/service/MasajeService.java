@@ -23,15 +23,15 @@ public class MasajeService {
         Boolean respuesta = true;
         try{
             Masaje objMasaje = new Masaje();
-            if(masaje.getId_masaje()>0){
-                objMasaje.setId_masaje(masaje.getId_masaje());
+            if(masaje.getIdmasaje()>0){
+                objMasaje.setIdmasaje(masaje.getIdmasaje());
             }
-            objMasaje.setPrecio_masaje((masaje.getPrecio_masaje()));
-            objMasaje.setTiempo_masaje((masaje.getTiempo_masaje()));
+            objMasaje.setPreciomasaje((masaje.getPreciomasaje()));
+            objMasaje.setTiempomasaje((masaje.getTiempomasaje()));
             objMasaje.setDescripcion((masaje.getDescripcion()));
 
             DescMasaje descMasaje = new DescMasaje();
-            descMasaje.setId_desc_masaje(masaje.getId_desc_masaje());
+            descMasaje.setIddescmasaje(masaje.getIddescmasaje());
             objMasaje.setDescmasaje(descMasaje);
 
             masajeRepository.save(objMasaje);

@@ -20,15 +20,15 @@ public class MaquillajeService {
         Boolean respuesta = true;
         try {
             Maquillaje objMaquillaje = new Maquillaje();
-            if (maquillaje.getId_maquillaje() > 0) {
-                objMaquillaje.setId_maquillaje(maquillaje.getId_maquillaje());
+            if (maquillaje.getIdmaquillaje() > 0) {
+                objMaquillaje.setIdmaquillaje(maquillaje.getIdmaquillaje());
             }
-            objMaquillaje.setPrecio_maquillaje(maquillaje.getPrecio_maquillaje());
-            objMaquillaje.setTiempo_maquillaje(maquillaje.getTiempo_maquillaje());
+            objMaquillaje.setPreciomaquillaje(maquillaje.getPreciomaquillaje());
+            objMaquillaje.setTiempomaquillaje(maquillaje.getTiempomaquillaje());
             objMaquillaje.setDescripcion(maquillaje.getDescripcion());
 
             DescMaquillaje descMaquillaje = new DescMaquillaje();
-            descMaquillaje.setId_desc_maquillaje(maquillaje.getId_desc_maquillaje());
+            descMaquillaje.setIddescmaquillaje(maquillaje.getIddescmaquillaje());
             objMaquillaje.setDescmaquillaje(descMaquillaje);
 
 

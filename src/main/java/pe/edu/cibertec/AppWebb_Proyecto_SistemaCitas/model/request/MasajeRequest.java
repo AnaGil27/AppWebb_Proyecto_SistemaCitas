@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class MasajeRequest {
 
-    private Integer id_masaje;
-    private String desc_masaje;
-    private String precio_masaje;
-    private String tiempo_masaje;
-    private Integer id_desc_masaje;
+    private Integer idmasaje;
+    private String descmasaje;
+    private String preciomasaje;
+    private String tiempomasaje;
+    private Integer iddescmasaje;
     private String descripcion;
 
 

@@ -8,6 +8,6 @@ public class ReservaManicuraRequest {
     private Integer idusuario;
     private Integer id_lugar;
     private Integer id_empleado;
-    private Integer id_manicura;
+    private Integer idmanicura;
     private String fechaM;
 }

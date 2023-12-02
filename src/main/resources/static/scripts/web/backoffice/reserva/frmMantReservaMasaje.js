@@ -47,7 +47,7 @@ function listarCboEmpleado(id_empleado){
     });
 }
 
-function listarCboMasaje(id_masaje) {
+function listarCboMasaje(idmasaje) {
     $.ajax({
         type: "GET",
         url: "/masaje/listar",
@@ -55,12 +55,12 @@ function listarCboMasaje(id_masaje) {
         success: function(resultado) {
             $.each(resultado, function(index, value) {
                 $("#cboMasaje").append(
-                    `<option value="${value.id_masaje}" data-precio="${value.precio_masaje}">${value.descripcion}</option>`
+                    `<option value="${value.idmasaje}" data-precio="${value.preciomasaje}">${value.descripcion}</option>`
                 );
             });
 
-            if (id_masaje > 0) {
-                $("#cboMasaje").val(id_masaje);
+            if (idmasaje > 0) {
+                $("#cboMasaje").val(idmasaje);
             }
 
             // Manejar el evento de cambio en el select para mostrar el precio

@@ -1,5 +1,3 @@
-
-
 $(document).on("click","#btnregistrarPeinado",function(){
     $("#txtusuario").val();
     $("#cboLugar").empty();
@@ -48,7 +46,7 @@ function listarCboEmpleado(id_empleado){
         }
     });
 }
-function listarCboPeinado(id_peinado) {
+function listarCboPeinado(idpeinado) {
     $.ajax({
         type: "GET",
         url: "/peinado/listar",
@@ -56,12 +54,12 @@ function listarCboPeinado(id_peinado) {
         success: function(resultado) {
             $.each(resultado, function(index, value) {
                 $("#cboPeinado").append(
-                    `<option value="${value.id_peinado}" data-precio="${value.precio_peinado}">${value.descripcion}</option>`
+                    `<option value="${value.idpeinado}" data-precio="${value.preciopeinado}">${value.descripcion}</option>`
                 );
             });
 
-            if (id_peinado > 0) {
-                $("#cboPeinado").val(id_peinado);
+            if (idpeinado > 0) {
+                $("#cboPeinado").val(idpeinado);
             }
 
             // Manejar el evento de cambio en el select para mostrar el precio

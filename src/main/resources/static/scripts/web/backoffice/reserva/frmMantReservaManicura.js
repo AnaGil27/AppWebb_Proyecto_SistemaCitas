@@ -50,7 +50,7 @@ function listarCboEmpleado(id_empleado){
 }
 
 
-function listarCboManicura(id_manicura) {
+function listarCboManicura(idmanicura) {
     $.ajax({
         type: "GET",
         url: "/manicura/listar",
@@ -58,12 +58,12 @@ function listarCboManicura(id_manicura) {
         success: function(resultado) {
             $.each(resultado, function(index, value) {
                 $("#cboManicura").append(
-                    `<option value="${value.id_manicura}" data-precio="${value.precio_manicura}">${value.descripcion}</option>`
+                    `<option value="${value.idmanicura}" data-precio="${value.preciomanicura}">${value.descripcion}</option>`
                 );
             });
 
-            if (id_manicura > 0) {
-                $("#cboManicura").val(id_manicura);
+            if (idmanicura > 0) {
+                $("#cboManicura").val(idmanicura);
             }
 
             // Manejar el evento de cambio en el select para mostrar el precio
@@ -87,7 +87,7 @@ $(document).on("click","#btnReservamanicura",function(){
             idusuario: $("#txtusuariomanicura").val(),
             id_lugar: $("#cboLugarmanicura").val(),
             id_empleado: $("#cboEmpleadomanicura").val(),
-            id_manicura: $("#cboManicura").val(),
+            idmanicura: $("#cboManicura").val(),
             fechaM: $("#txtfechamanicura").val()
 
         }),
@@ -122,7 +122,7 @@ function listarReservaManicura(){
                                      "data-manusu='"+value.usuario.idusuario+"'"+
                                      "data-manlu='"+value.lugar.id_lugar+"'"+
                                      "data-manemp='"+value.empleado.id_empleado+"'"+
-                                      "data-manmani='"+value.manicura.id_manicura+"'"+
+                                      "data-manmani='"+value.manicura.idmanicura+"'"+
                                      "data-manfecha='"+value.fechaM+"'"+
                                      "><i class='fas fa-edit'></i></button>"+
                     "</td></tr>");

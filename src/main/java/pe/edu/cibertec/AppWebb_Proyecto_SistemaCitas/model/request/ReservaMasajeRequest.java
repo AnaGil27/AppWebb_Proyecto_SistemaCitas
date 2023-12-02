@@ -7,6 +7,6 @@ public class ReservaMasajeRequest {
     private Integer idusuario;
     private Integer id_lugar;
     private Integer id_empleado;
-    private Integer id_masaje;
+    private Integer idmasaje;
     private String fechaJ;
 }

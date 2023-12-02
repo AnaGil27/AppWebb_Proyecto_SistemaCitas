@@ -40,7 +40,7 @@ public class ReservaMasajeService {
             objReservaMasaje.setEmpleado(empleado);
 
             Masaje masaje = new Masaje();
-            masaje.setId_masaje(reservaMasaje.getId_masaje());
+            masaje.setIdmasaje(reservaMasaje.getIdmasaje());
             objReservaMasaje.setMasaje(masaje);
 
             objReservaMasaje.setFechaJ(reservaMasaje.getFechaJ());

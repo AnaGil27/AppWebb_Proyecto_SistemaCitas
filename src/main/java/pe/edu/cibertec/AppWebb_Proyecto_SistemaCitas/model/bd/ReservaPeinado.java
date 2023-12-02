@@ -31,7 +31,7 @@ public class ReservaPeinado {
     private Empleado empleado;
 
     @OneToOne
-    @JoinColumn(name="id_peinado")
+    @JoinColumn(name="idpeinado")
     private Peinado peinado;
 
     @Column(name="fechaP")

@@ -9,6 +9,6 @@ public class ReservaPeinadoRequest {
     private Integer idusuario;
     private Integer id_lugar;
     private Integer id_empleado;
-    private Integer id_peinado;
+    private Integer idpeinado;
     private String fechaP;
 }

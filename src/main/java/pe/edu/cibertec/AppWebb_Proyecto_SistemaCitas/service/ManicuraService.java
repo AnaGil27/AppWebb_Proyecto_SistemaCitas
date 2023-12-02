@@ -23,15 +23,15 @@ public class ManicuraService {
         Boolean respuesta = true;
         try{
             Manicura objManicura = new Manicura();
-            if(manicura.getId_manicura()>0){
-                objManicura.setId_manicura(manicura.getId_manicura());
+            if(manicura.getIdmanicura()>0){
+                objManicura.setIdmanicura(manicura.getIdmanicura());
             }
-            objManicura.setPrecio_manicura(manicura.getPrecio_manicura());
-            objManicura.setTiempo_manicura(manicura.getTiempo_manicura());
+            objManicura.setPreciomanicura(manicura.getPreciomanicura());
+            objManicura.setTiempomanicura(manicura.getTiempomanicura());
             objManicura.setDescripcion(manicura.getDescripcion());
 
             DescManicura descManicura = new DescManicura();
-            descManicura.setId_desc_manicura(manicura.getId_desc_manicura());
+            descManicura.setIddescmanicura(manicura.getIddescmanicura());
             objManicura.setDescmanicura(descManicura);
 
             manicuraRepository.save(objManicura);

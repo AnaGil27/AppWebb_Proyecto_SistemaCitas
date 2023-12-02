@@ -40,7 +40,7 @@ public class ReservaPeinadoService {
             objReservaPeinado.setEmpleado(empleado);
 
             Peinado peinado = new Peinado();
-            peinado.setId_peinado(reservaPeinado.getId_peinado());
+            peinado.setIdpeinado(reservaPeinado.getIdpeinado());
             objReservaPeinado.setPeinado(peinado);
 
             objReservaPeinado.setFechaP(reservaPeinado.getFechaP());

@@ -8,6 +8,6 @@ public class ReservaMaquillajeRequest {
     private Integer idusuario;
     private Integer id_lugar;
     private Integer id_empleado;
-    private Integer id_maquillaje;
+    private Integer idmaquillaje;
     private String fechaP;
 }

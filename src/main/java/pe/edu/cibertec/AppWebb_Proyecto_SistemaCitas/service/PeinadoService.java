@@ -24,15 +24,15 @@ public class PeinadoService {
         Boolean respuesta = true;
         try {
             Peinado objPeinado = new Peinado();
-            if (peinado.getId_peinado() > 0) {
-                objPeinado.setId_peinado(peinado.getId_peinado());
+            if (peinado.getIdpeinado() > 0) {
+                objPeinado.setIdpeinado(peinado.getIdpeinado());
             }
-            objPeinado.setPrecio_peinado(peinado.getPrecio_peinado());
-            objPeinado.setTiempo_peinado(peinado.getTiempo_peinado());
+            objPeinado.setPreciopeinado(peinado.getPreciopeinado());
+            objPeinado.setTiempopeinado(peinado.getTiempopeinado());
             objPeinado.setDescripcion(peinado.getDescripcion());
 
             DescPeinado descPeinado = new DescPeinado();
-            descPeinado.setId_desc_peinado(peinado.getId_desc_peinado());
+            descPeinado.setIddescpeinado(peinado.getIddescpeinado());
             objPeinado.setDescpeinado(descPeinado);
 
 

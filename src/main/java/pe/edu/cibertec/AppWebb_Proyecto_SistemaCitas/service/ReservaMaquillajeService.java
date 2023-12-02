@@ -40,7 +40,7 @@ public class ReservaMaquillajeService {
             objReservaMaquillaje.setEmpleado(empleado);
 
             Maquillaje maquillaje = new Maquillaje();
-            maquillaje.setId_maquillaje(reservaMaquillaje.getId_maquillaje());
+            maquillaje.setIdmaquillaje(reservaMaquillaje.getIdmaquillaje());
             objReservaMaquillaje.setMaquillaje(maquillaje);
 
             objReservaMaquillaje.setFechaP(reservaMaquillaje.getFechaP());
